@@ -5,7 +5,7 @@ import Producto from "./Producto"
 function Productos() {
     const [productos,setProductos] = useState([]);
     const [isLoading,setLoading] = useState(true)
-    const [cantidad,setCantidad] = useState(5)
+    const [cantidad,setCantidad] = useState(4) // Dato pretendido por el profesor
     useEffect(
         ()=>{
             const listado = async()=>{
@@ -43,9 +43,9 @@ function Productos() {
                 <h1>Lista de Productos</h1>
                 <div>
                     <select onChange={handleChange}>
-                        <option value="5" defaultValue> Mostrar 5</option>
-                        <option value="15">Mostrar 15</option>
-                        <option value="25">Mostrar 25</option>
+                        <option value="4" defaultValue> Mostrar 4</option>
+                        <option value="10">Mostrar 10</option>
+                        <option value="40">Mostrar 40</option>
                         <option value="50">Mostrar 50</option>
                     </select>
                 </div>

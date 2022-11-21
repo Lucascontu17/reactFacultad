@@ -13,13 +13,13 @@ function Public(){
           <Route path='/home' element={<Home />} />
           <Route path='/registrarse' element={<Sign_up />} />
           <Route path='/Log_in' element={<Log_in />} />
-          <Route path='/productohola' element={<Detalle />} />
+          <Route path='/producto/:id' element={<Detalle />} /> 
         </Routes>
     )
 }
 
 export default Public
-
+// <Route path='/producto/:id' element={<Detalle />} /> cuando tengo que leer un id de por ejemplo este caso un producto y enviarlo por el ruteo debo poner en el path /:id como se lee en esta linea
 /*
           <Route path='/producto/:id' element={<Detalle />} />
           <Route path='*' element={<NotFound />} />

@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
-import { getByIdProductos } from "../Services/productosServices";
+import { getByIdProduct } from "../Services/productosServices";
 import { getDescription } from "../Services/productosServices";
-// import React, { Component }  from 'react';
-function Detalle() {
+
+//import React, { Component }  from 'react';
+
+ function Detalle() {
    const {id} =  useParams()
    const [producto,setProducto] = useState({});
    const [isLoading,setLoading] = useState(true)
@@ -13,7 +15,7 @@ function Detalle() {
       ()=>{
          const listado = async()=>{
             try {   
-               const responseData = await getByIdProductos(id)
+               const responseData = await getByIdProduct(id)
                const desc = await getDescription(id);
                setProducto(responseData.data)
                setDescription(desc.data.plain_text)
@@ -53,9 +55,9 @@ function Detalle() {
                   </div>
                   <div className="infoItem">
                      <p className="prices">Cantidad disponible {producto.available_quantity}</p>
-                     <p className="prices">${producto.price}</p>
+                     <p className="prices">{producto.currency_id} {producto.price}</p>
                      <p className="sku">#{producto.category_id}</p>
-                     <button className="textSize" id="buy">Comprar</button>
+                     <p className="address">Ubicacion de retiro del producto: {producto.seller_address.state.name}</p>
                   </div>
                   <div className="infoItem">
                      <ul className="tags">
@@ -65,6 +67,7 @@ function Detalle() {
                </div>
                <div className="description textSize">
                      <p>{description}</p>
+                     <button className="textSize" id="buy">Adquirir producto</button>
                </div>
             </div>
          </div>

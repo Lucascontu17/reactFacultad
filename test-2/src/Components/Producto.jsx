@@ -31,7 +31,7 @@ function Producto({
         <p>Dominio: {domain_id}</p>
         <img src={thumbnail} alt={thumbnail_id} />
         <p> Se encuentra por la zona de: {seller_address.state.name}</p>
-        <button><Link to={`/productohola/${id}`}>Ver Detalle</Link></button>
+        <button><Link to={`/producto/${id}`}>Ver Detalle</Link></button>
       </div>
   )
 }

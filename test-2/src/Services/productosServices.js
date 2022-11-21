@@ -7,7 +7,7 @@ export function getAll(cant) {
     // console.log(instance.get(`sites`))
     return instance.get(`sites/MLA/search?q=ipod&limit=${cant}`)
 }
-export function getByIdProductos(id){
+export function getByIdProduct(id){
     return instance.get(`items/${id}`)
 
 }
