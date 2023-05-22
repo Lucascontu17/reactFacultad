@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { getByIdProduct } from "../Services/productosServices";
@@ -56,7 +57,7 @@ import { getDescription } from "../Services/productosServices";
                   <div className="infoItem">
                      <p className="prices">Cantidad disponible {producto.available_quantity}</p>
                      <p className="prices">{producto.currency_id} {producto.price}</p>
-                     <p className="sku">#{producto.category_id}</p>
+                     <p className="sku"># {producto.category_id}</p>
                      <p className="address">Ubicacion de retiro del producto: {producto.seller_address.state.name}</p>
                   </div>
                   <div className="infoItem">
